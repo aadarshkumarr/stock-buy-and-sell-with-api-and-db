@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+
+    <table class="table table-striped container">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Symbol</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{data['name']}}</td>
+                <td>{{data['symbol']}}</td>
+                <td>{{data['price']}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Your Portfolio
+{% endblock %}
+
+{% block main %}
+
+    <h1 class="mb-3">Portfolio</h1>
+    <table class="container table table-striped">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Symbol</th>
+                <th scope="col">Owned</th>
+                <th scope="col">Price</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in package %}
+                <tr>
+                        <td>{{loop.index}}</td>
+                        <td>{{stock['name']}}</td>
+                        <td>{{stock['symbol']}}</td>
+                        <td>{{stock['shares']}}</td>
+                        <td>{{stock['price']}}</td>
+                        <td>{{stock['total']}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="border-0"></td>
+                <td class="border-0"></td>
+                <td class="border-0"></td>
+                <td class="border-0"></td>
+                <td class="border-0 fw-bold">Your balance:</td>
+                <td class="border-0 text-center">{{balance}}</td>  
+            </tr>
+            <tr>
+                <td class="border-0"></td>
+                <td class="border-0"></td>
+                <td class="border-0"></td>
+                <td class="border-0"></td>
+                <td class="border-0 fw-bold">Grand total:</td> 
+                <td class="border-0">{{grandTotal}}</td> 
+            </tr>
+        </tfoot>
+    </table>
+
+{% endblock %}

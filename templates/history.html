@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Your Portfolio
+{% endblock %}
+
+{% block main %}
+
+    <h1 class="mb-3">Portfolio</h1>
+    <table class="container table table-striped">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Date and Time</th>
+                <th scope="col">Symbol</th>
+                <th scope="col">Traded</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in package %}
+                <tr>
+                        <td>{{stock['date']}}</td>
+                        <td>{{stock['symbol']}}</td>
+                        <td>{{stock['shares']}}</td>
+                        <td>{{stock['price']}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+{% endblock %}
